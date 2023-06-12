@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>게시글 보기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #666;
+    }
+
+    p {
+      color: #999;
+    }
+
+    .post-content {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<h1>게시글 내용</h1>
+<hr>
+<h2>제목: <span th:text="${post.title}"></span></h2>
+<p>작성자: <span th:text="${post.author}"></span></p>
+<p>작성일: <span th:text="${post.createdDate}"></span></p>
+<hr>
+<div class="post-content" th:text="${post.content}"></div>
+</body>
+</html>
