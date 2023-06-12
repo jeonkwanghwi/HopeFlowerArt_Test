@@ -4,6 +4,7 @@ import kh.kwanghwi.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -26,6 +27,13 @@ public class BoardController {
     @GetMapping("/post")
     public String post() {
         return "board/post.html";
+    }
+
+    @GetMapping("/post/{id}")
+    public String showPost(@PathVariable("id") Long id, Model model) {
+        BoardDto boardDto = boardService.getBoardById(id);
+        model.addAttribute("post", boardDto);
+        return "board/show.html";
     }
 
 
