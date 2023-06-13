@@ -6,9 +6,9 @@
 
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/test
 #    url:jdbc:h2:file:C:/study-spring/board/h2data:
 #    h2 url :      jdbc:h2:file:C:/study-spring/board/h2data
+    url: jdbc:h2:tcp://localhost/~/test
     driver-class-name: org.h2.Driver
     username: sa
   jpa:
