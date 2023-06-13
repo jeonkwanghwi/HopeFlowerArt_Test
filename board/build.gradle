@@ -30,6 +30,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// spring security를 넣으면 login이 welcomepage가 되는???
 
 }
 
