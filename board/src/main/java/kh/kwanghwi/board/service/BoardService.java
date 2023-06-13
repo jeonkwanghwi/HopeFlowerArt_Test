@@ -40,17 +40,16 @@ public class BoardService {
     }
 
     @Transactional
-    public BoardDto getBoardById(Long id) {
-        Board board = boardRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid post ID: " + id));
+    public BoardDto getPost(Long id) {
+        Board board = boardRepository.findById(id).get();
 
-        return BoardDto.builder()
+        BoardDto boardDto = BoardDto.builder()
                 .id(board.getId())
                 .author(board.getAuthor())
                 .title(board.getTitle())
                 .content(board.getContent())
                 .createdDate(board.getCreatedDate())
                 .build();
+        return boardDto;
     }
-
 }
